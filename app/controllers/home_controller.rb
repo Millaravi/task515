@@ -16,19 +16,26 @@ class HomeController < ApplicationController
   def new
   end
 
-  def show
-    @view_post = Post.find(params[:post_id])
-  end
   
   def update
     upd_post = Post.find(params[:post_id])
     upd_post.title = params[:title]
+    upd_post.editor = params[:editor]
     upd_post.content = params[:content]
     upd_post.save
     redirect_to '/'
   end
 
+   def comment_update
+    upd_com = Comment.find(params[:comment_id])
+    upd_com.content = params[:content]
+    upd_com.save
+    redirect_to '/'
+  end
   
+  def comment_updateview
+    @upd_com = Comment.find(params[:comment_id])
+  end
   def update_view
     @upd_post = Post.find(params[:post_id])
   end
@@ -46,6 +53,8 @@ class HomeController < ApplicationController
     
     redirect_to '/'
   end
+  
+ 
   
   def comment_delete
     del_comment = Comment.find(params[:comment_id])

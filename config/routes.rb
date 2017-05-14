@@ -12,8 +12,12 @@ Rails.application.routes.draw do
   post 'update/:post_id' => 'home#update'
   
   post 'comment_create' => 'home#comment_create'
+  
+  get 'comment_updateview/:comment_id' => 'home#comment_updateview'
 
-  get 'comment_delete/:post_id' => 'home#comment_delete'
+  post 'comment_update/:comment_id' => 'home#comment_update'
+  
+  get 'comment_delete/:comment_id' => 'home#comment_delete'
   
   
   # The priority is based upon order of creation: first created -> highest priority.

@@ -6,8 +6,8 @@
        <h4>제목 : <%= p.title %></h4>
        <h4>작성자 : <%= p.editor %></h4>
        <h4>내용 : <%= p.content %></h4>
-       <a href="/update">[수정]</a>
-       <a href="/delete">[삭제]</a>
+       <a href="/update_view/<%= p.id %>">[수정]</a>
+       <a href="/delete/<%= p.id %>">[삭제]</a>
        
        <br><br>
 
@@ -15,8 +15,8 @@
                 <%= a.id %><br>
                 <%= a.content %>
             <br>
-                <a href ="/comment_edit">[수정]</a>
-                <a href = "/comment_delete/<%= p.id %>">[댓글 삭제]</a><br>
+                <a href ="/comment_updateview/<%= a.id %>">[수정]</a>
+                <a href = "/comment_delete/<%= a.id %>">[댓글 삭제]</a><br>
              <% end %>
 
              <br>

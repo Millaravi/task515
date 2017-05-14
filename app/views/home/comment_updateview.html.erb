@@ -1,0 +1,6 @@
+<form action = "/comment_update/<%= @upd_com.id %>" method = "POST">
+
+                        <label for="comment">Comment:</label>
+                        <textarea name = "content" rows="3"><%= @upd_com.content %></textarea>
+                        <button type="submit">Submit</button> 
+                    </form>
