@@ -1,0 +1,6 @@
+ <form action="update/<%= @upd_post.id%>" method="POST">
+        <h2>제목 : <input type="string" name="title" id="input_title" value="<%= @upd_post.title %>"></h2><br>
+        <h2>작성자 : <input type="string" name="editor" id="input_editor" value="<%= @upd_post.editor %>"></h2><br>
+        <h2>내용 : <input type="text" name="content" id="input_content" value="<%= @upd_post.content %>"></h2><hr>
+        <button type="submit" class="btn btn-default">Submit</button>
+    </form>

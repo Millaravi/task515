@@ -1,0 +1,31 @@
+<h1>게시판</h1><hr>
+
+<a href="/new"><h2>글쓰기</h2></a><hr>
+   <% @posts.each do |p| %>
+       <h>글번호 : <%= p.id %></h>
+       <h4>제목 : <%= p.title %></h4>
+       <h4>작성자 : <%= p.editor %></h4>
+       <h4>내용 : <%= p.content %></h4>
+       <a href="/update">[수정]</a>
+       <a href="/delete">[삭제]</a>
+       
+       <br><br>
+
+           <% p.comments.each do |a| %>
+                <%= a.id %><br>
+                <%= a.content %>
+            <br>
+                <a href ="/comment_edit">[수정]</a>
+                <a href = "/comment_delete/<%= p.id %>">[댓글 삭제]</a><br>
+             <% end %>
+
+             <br>
+                    <form action = "/comment_create" method = "POST">
+                        <input type = "hidden" name = "post_id" value = "<%= p.id %>">
+                        <label for="comment">Comment:</label>
+                        <textarea name = "content" rows="3"></textarea>
+                        <button type="submit">Submit</button> 
+                    </form>
+                <hr>
+
+   <% end %>
